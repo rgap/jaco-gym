@@ -9,13 +9,17 @@ rospy.init_node("kinova_client", anonymous=True, log_level=rospy.INFO)
 env = gym.make('JacoReal-v0')
 
 
+print('reset')
+
 state = env.reset()
+
+
 print("current state: ", state)
 
 action = [0, 180, 180, 60, 0, 0]
 state = env.step(action)
-env.print_tip_pos()
-print("current state: ", state)
+# env.print_tip_pos()
+# print("current state: ", state)
 
 
 # for t in range(3):

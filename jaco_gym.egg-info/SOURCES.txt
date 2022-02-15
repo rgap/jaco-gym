@@ -1,3 +1,4 @@
+LICENSE
 README.md
 setup.py
 jaco_gym.egg-info/PKG-INFO

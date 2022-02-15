@@ -6,8 +6,6 @@ from gym import error, spaces, utils
 from gym.utils import seeding
 from jaco_gym.envs.ros_scripts.jaco_gazebo_publish_topic import JacoGazeboPublishTopic
 
-
-
 class JacoEnv(gym.Env):
 
     def __init__(self):
@@ -26,9 +24,9 @@ class JacoEnv(gym.Env):
         self.state = self.robot.read_state()
 
         # # calculate reward
-        # self.tip_position = self.print_tip_pos()
+        self.tip_position = self.print_tip_pos()
 
-        # self.reward = np.linalg.norm(self.tip_position - self.target_vect)
+        self.reward = np.linalg.norm(self.tip_position - self.target_vect)
 
         # print("tip position: ", self.tip_position)
         # print("target vect: ", self.target_vect)
