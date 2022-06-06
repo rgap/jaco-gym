@@ -85,32 +85,31 @@ class JacoEnv(gym.Env):
 
     def deg2action(self, degrees):
         action = np.zeros(6)
-        action[0] = self.min_max_conversion(degrees[0], OldMin=0, OldMax=360, NewMin=-1, NewMax=1)
-        action[1] = self.min_max_conversion(degrees[1], OldMin=200, OldMax=210, NewMin=-1, NewMax=1)
-        action[2] = self.min_max_conversion(degrees[2], OldMin=90, OldMax=270, NewMin=-1, NewMax=1)
-        action[3] = self.min_max_conversion(degrees[3], OldMin=0, OldMax=360, NewMin=-1, NewMax=1)
-        action[4] = self.min_max_conversion(degrees[4], OldMin=0, OldMax=360, NewMin=-1, NewMax=1)
-        action[5] = self.min_max_conversion(degrees[5], OldMin=0, OldMax=360, NewMin=-1, NewMax=1)
+        action[0] = self.min_max_conversion(degrees[0], OldMin=130, OldMax=260, NewMin=-1, NewMax=1)
+        action[1] = self.min_max_conversion(degrees[1], OldMin=220, OldMax=240, NewMin=-1, NewMax=1)
+        action[2] = self.min_max_conversion(degrees[2], OldMin=100, OldMax=140, NewMin=-1, NewMax=1)
+        action[3] = self.min_max_conversion(degrees[3], OldMin=200, OldMax=280, NewMin=-1, NewMax=1)
+        action[4] = self.min_max_conversion(degrees[4], OldMin=30, OldMax=80, NewMin=-1, NewMax=1)
+        action[5] = self.min_max_conversion(degrees[5], OldMin=70, OldMax=100, NewMin=-1, NewMax=1)
 
         return action
 
     def action2deg(self, action):
         degrees = np.zeros(6)
-        degrees[0] = self.min_max_conversion(action[0], OldMin=-1, OldMax=1, NewMin=0, NewMax=360)
-        degrees[1] = self.min_max_conversion(action[1], OldMin=-1, OldMax=1, NewMin=200, NewMax=210)
-        degrees[2] = self.min_max_conversion(action[2], OldMin=-1, OldMax=1, NewMin=90, NewMax=270)
-        degrees[3] = self.min_max_conversion(action[3], OldMin=-1, OldMax=1, NewMin=0, NewMax=360)
-        degrees[4] = self.min_max_conversion(action[4], OldMin=-1, OldMax=1, NewMin=0, NewMax=360)
-        degrees[5] = self.min_max_conversion(action[5], OldMin=-1, OldMax=1, NewMin=0, NewMax=360)
+        degrees[0] = self.min_max_conversion(action[0], OldMin=-1, OldMax=1, NewMin=130, NewMax=260)
+        degrees[1] = self.min_max_conversion(action[1], OldMin=-1, OldMax=1, NewMin=220, NewMax=240)
+        degrees[2] = self.min_max_conversion(action[2], OldMin=-1, OldMax=1, NewMin=100, NewMax=140)
+        degrees[3] = self.min_max_conversion(action[3], OldMin=-1, OldMax=1, NewMin=200, NewMax=280)
+        degrees[4] = self.min_max_conversion(action[4], OldMin=-1, OldMax=1, NewMin=30, NewMax=80)
+        degrees[5] = self.min_max_conversion(action[5], OldMin=-1, OldMax=1, NewMin=70, NewMax=100)
 
         return degrees
 
     def set_target_position(self):
         # fixed target
-        x_target = 0.575581073761
-        y_target = 0.0795939415693
-        z_target = 0.0828775539994
-
+        x_target = 0.5
+        y_target = 0.1
+        z_target = 0.08
         self.target_vect = np.array([x_target, y_target, z_target])
 
     def reset(self): 
