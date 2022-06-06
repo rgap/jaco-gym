@@ -46,7 +46,6 @@ roslaunch kinova_gazebo robot_launch_render.launch kinova_robotType:=j2n6s300
 
 ## Useful links
 
-```
-https://usermanual.wiki/Pdf/JACOC2B26DOFAdvancedSpecificationGuide.1434949807.pdf
-https://assistive.kinovarobotics.com/uploads/EN-UG-007-Jaco-user-guide-R05.pdf
-```
+[Jaco guide](https://usermanual.wiki/Pdf/JACOC2B26DOFAdvancedSpecificationGuide.1434949807.pdf)
+
+[Jaco user guide](https://assistive.kinovarobotics.com/uploads/EN-UG-007-Jaco-user-guide-R05.pdf)
